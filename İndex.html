@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ferovenehir</title>
+<style>
+  body {
+    margin:0; padding:0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    color: #4b2e39;
+    text-align: center;
+    min-height: 100vh;
+  }
+  #login {
+    position: absolute; top:0; left:0; right:0; bottom:0;
+    background: rgba(255,255,255,0.95);
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+  }
+  #login input {
+    padding: 10px 15px;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    border: 2px solid #4b2e39;
+    border-radius: 5px;
+  }
+  #login button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #4b2e39;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  #content {
+    display: none;
+    padding: 20px;
+  }
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 0;
+  }
+  h2 {
+    margin-top: 5px;
+    font-weight: normal;
+    color: #7d565b;
+  }
+  #message {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 30px 0;
+  }
+  #gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+  #gallery img {
+    max-width: 200px;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(75,46,57,0.5);
+  }
+  audio {
+    margin-top: 20px;
+    outline:none;
+  }
+  footer {
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: #7d565b;
+  }
+</style>
+</head>
+<body>
+
+<div id="login">
+  <h2>Ferovenehir'e Hoşgeldin 💖</h2>
+  <p>Lütfen şifreyi gir:</p>
+  <input type="password" id="password" placeholder="Şifre" autofocus />
+  <button onclick="checkPassword()">Giriş Yap</button>
+  <p id="error" style="color:red; margin-top:10px;"></p>
+</div>
+
+<div id="content">
+  <h1>Ferovenehir</h1>
+  <h2>Tanışma Tarihi: 16.07.2025</h2>
+  <div id="message">Senden hiç vazgeçmeyecek...</div>
+  <div id="gallery">
+    <img src="https://i.imgur.com/JZL6nyr.jpg" alt="Fotoğraf 1" />
+    <img src="https://i.imgur.com/2yZLjli.jpg" alt="Fotoğraf 2" />
+    <img src="https://i.imgur.com/U9HXu7U.jpg" alt="Fotoğraf 3" />
+  </div>
+  <audio controls autoplay loop>
+    <source src="https://example.com/muzik.mp3" type="audio/mpeg" />
+    Tarayıcınız audio elementini desteklemiyor.
+  </audio>
+  <footer>16.07.2025 - Sonsuza dek...</footer>
+</div>
+
+<script>
+  function checkPassword() {
+    const input = document.getElementById('password').value.trim();
+    const error = document.getElementById('error');
+    if(input === '16') {
+      document.getElementById('login').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    } else {
+      error.textContent = 'Şifre yanlış, tekrar deneyin.';
+    }
+  }
+</script>
+
+</body>
+</html>
